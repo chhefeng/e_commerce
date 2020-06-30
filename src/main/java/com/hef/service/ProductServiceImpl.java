@@ -8,6 +8,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.hef.entity.Product;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -24,9 +25,10 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.findAll();
 	}
 
+	@Transactional
 	@Override
 	public Product findById(Long id) {
-		return productRepository.getOne(id);
+		return productRepository.findById(id).get();
 	}
 
 	@Override

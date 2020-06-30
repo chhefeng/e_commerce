@@ -23,6 +23,16 @@ public class CustomerServiceTest {
     }
 
     @Test
+    public void findAllTest() throws JsonProcessingException {
+        List<Customer> customers = customerService.findAll();
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonCustomer = mapper.writerWithDefaultPrettyPrinter()
+                .writeValueAsString(customers);
+        System.out.println(jsonCustomer);
+
+    }
+
+    @Test
     public void saveCustomerTest() throws JsonProcessingException {
         List<CustomerOrder> orders = new ArrayList<>();
 

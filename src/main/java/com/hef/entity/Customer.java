@@ -25,7 +25,7 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "customer")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customer")
 	private List<CustomerOrder> customerOrders = new ArrayList<>();
 
 
