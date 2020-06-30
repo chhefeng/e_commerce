@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: mysql://localhost:3306/eshop?useSSL=false&serverTimezone=UTC
+    username: hefeng
+    password: hefeng
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    root: warn
+    com.hef.ecommerce: info
+
+
+server:
+  port: 8081
