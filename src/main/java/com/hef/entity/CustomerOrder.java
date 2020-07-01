@@ -31,7 +31,4 @@ public class CustomerOrder {
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customerOrder")
 	private List<OrderLine> orderLines = new ArrayList<>();
-
-
-	
 }

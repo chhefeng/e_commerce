@@ -45,6 +45,10 @@ public class ProductServiceTest {
 
     @Test
     public void saveTest() throws JsonProcessingException {
+        Product product = new Product();
 
+
+
+        Product product1 = productService.save(product);
     }
 }
