@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
 @Log4j2
 public class JwtAuthenticateFilter extends UsernamePasswordAuthenticationFilter {
 
-    private static final String strKey = "iPrBkYvpb3ddf2FtGEZ-GzMTQKhrUzJzyNM6RKpgeVw";
+    private static final String strKey = "iPrBkYvpb3ddf2FtGEZ-GzMTQKhrUzJzyNM6RKpWWWW";
     private final AuthenticationManager authenticationManager;
 
     public JwtAuthenticateFilter(AuthenticationManager authenticationManager) {
