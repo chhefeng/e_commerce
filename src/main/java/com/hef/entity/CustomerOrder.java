@@ -29,6 +29,6 @@ public class CustomerOrder {
 	@ManyToOne
 	private Customer customer;
 	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customerOrder")
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "customerOrder")
 	private List<OrderLine> orderLines = new ArrayList<>();
 }

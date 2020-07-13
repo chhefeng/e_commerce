@@ -1,8 +1,9 @@
-package com.hef.service;
+package com.hef.service.impl;
 
 import java.util.List;
 
 import com.hef.dao.ProductRepository;
+import com.hef.service.ProductService;
 import javassist.NotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,6 @@ public class ProductServiceImpl implements ProductService {
 	public Product findById(Long id) {
 		return productRepository.findById(id).get();
 	}
-
 	@Override
 	public Product save(Product product) {
 		return productRepository.save(product);

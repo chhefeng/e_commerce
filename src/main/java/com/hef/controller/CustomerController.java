@@ -9,7 +9,7 @@ import com.hef.entity.Customer;
 import com.hef.service.CustomerService;
 
 @RestController
-@RequestMapping("/rest/customer")
+@RequestMapping("/api/customer")
 public class CustomerController {
 
 	private CustomerService customerService;
@@ -25,10 +25,25 @@ public class CustomerController {
 		return customers;
 	}
 
-	@PostMapping("/post")
-	public Customer postCustomer(@RequestBody Customer customer){
+	@GetMapping("/{id}")
+	public Customer findOne(@PathVariable Long id){
+		Customer customer =  customerService.findOne(id);
+		return customer;
+	}
+
+	@PostMapping("")
+	public Customer save(@RequestBody Customer customer){
 		return customerService.save(customer);
 	}
-	
+
+	@PutMapping("/{id}")
+	public Customer update(@RequestBody Customer customer){
+		return customerService.save(customer);
+	}
+
+	@DeleteMapping("/{id}")
+	public Customer delete(@RequestBody Customer customer){
+		return customerService.save(customer);
+	}
 	
 }

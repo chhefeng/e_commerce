@@ -9,7 +9,7 @@ import com.hef.entity.Product;
 import com.hef.service.ProductService;
 
 @RestController
-@RequestMapping({"/rest", ""})
+@RequestMapping({"/api",""})
 public class ProductController {
 
 	private ProductService productService;

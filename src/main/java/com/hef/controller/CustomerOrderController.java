@@ -9,18 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class OrderController {
+public class CustomerOrderController {
 
     private OrderService orderService;
 
     @Autowired
-    public OrderController(OrderService orderService) {
+    public CustomerOrderController(OrderService orderService) {
         this.orderService = orderService;
     }
 
-    @GetMapping("/orders")
-    public List<CustomerOrder> findAll(){
-        return orderService.findAll();
+    @GetMapping("customer/{customerId}/orders")
+    public List<CustomerOrder> findAll(@PathVariable Long customerId){
+        return orderService.findAllByCustomerId(customerId);
     }
 
     @GetMapping("/order/{orderId}")

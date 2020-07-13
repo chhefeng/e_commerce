@@ -17,5 +17,5 @@ public interface OrderService {
 
     public void deleteById(Long id);
 
-
+    List<CustomerOrder> findAllByCustomerId(Long customerId);
 }

@@ -1,7 +1,8 @@
-package com.hef.service;
+package com.hef.service.impl;
 
 import com.hef.dao.OrderRepository;
 import com.hef.entity.CustomerOrder;
+import com.hef.service.OrderService;
 import javassist.NotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void deleteById(Long id) {
         orderRepository.deleteById(id);
+    }
+
+    @Override
+    public List<CustomerOrder> findAllByCustomerId(Long customerId) {
+        return null;
     }
 }
