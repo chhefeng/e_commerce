@@ -23,13 +23,13 @@ public class CustomerOrderController {
         return orderService.findAllByCustomerId(customerId);
     }
 
-    @GetMapping("/order/{orderId}")
-    public CustomerOrder findOne (@PathVariable("orderId") Long orderId){
+    @GetMapping("customer/{customerId}/order/{orderId}")
+    public CustomerOrder findOne (@PathVariable Long customerId, @PathVariable Long orderId){
         return orderService.findById(orderId);
     }
 
-    @PostMapping("/order")
-    public CustomerOrder save(@RequestBody CustomerOrder customerOrder){
+    @PostMapping("customer/{customerId}/order")
+    public CustomerOrder save(@PathVariable Long customerId, @RequestBody CustomerOrder customerOrder){
         return orderService.save(customerOrder);
     }
 

@@ -18,15 +18,20 @@ public class OrderLine {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 
-	private Integer amount;
+	private int amount;
 	private BigDecimal purchasePrice;
-	
+
+	@ToString.Exclude
 	@ManyToOne
 	private CustomerOrder customerOrder;
 
+	@ToString.Exclude
 	@ManyToOne
-	@JoinColumn(name="product_id")
 	private Product product;
+
+	public BigDecimal computingPurchasePrice(){
+		return this.product.getPrice().multiply(new BigDecimal(this.amount));
+	}
 
 
 

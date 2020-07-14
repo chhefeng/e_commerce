@@ -1,9 +1,7 @@
 package com.hef.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -25,7 +23,9 @@ public class Customer {
 	private String firstName;
 	private String lastName;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "customer")
+	@ToString.Exclude
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER, mappedBy = "customer")
 	private List<CustomerOrder> customerOrders = new ArrayList<>();
 
 

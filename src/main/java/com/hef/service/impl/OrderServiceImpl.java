@@ -7,6 +7,7 @@ import javassist.NotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -30,6 +31,7 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.getOne(id);
     }
 
+    @Transactional
     @Override
     public CustomerOrder save(CustomerOrder customerOrder) {
         return orderRepository.save(customerOrder);
