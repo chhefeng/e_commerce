@@ -12,7 +12,7 @@ import com.hef.service.CustomerService;
 @RequestMapping("/api/customer")
 public class CustomerController {
 
-	private CustomerService customerService;
+	private final CustomerService customerService;
 	
 	@Autowired
 	public CustomerController(CustomerService customerService) {
@@ -21,14 +21,12 @@ public class CustomerController {
 
 	@GetMapping("/list")
 	public List<Customer> getCustomers(){
-		List<Customer> customers =  customerService.findAll();
-		return customers;
+		return customerService.findAll();
 	}
 
 	@GetMapping("/{id}")
 	public Customer findOne(@PathVariable Long id){
-		Customer customer =  customerService.findOne(id);
-		return customer;
+		return customerService.findOne(id);
 	}
 
 	@PostMapping("")

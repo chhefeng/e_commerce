@@ -6,7 +6,7 @@ spring:
     password: hefeng
   security:
     user:
-      name: user
+      name: hefeng
       password: 123456
       roles: Admin
 
